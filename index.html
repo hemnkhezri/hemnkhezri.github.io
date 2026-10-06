@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hemn Khezri | Computer Engineer and Researcher</title>
+<meta name="description" content="Hemn Khezri, computer engineer with an M.Sc. in Software Engineering. Research in intrusion detection, network security, cloud computing, optimization and machine learning.">
+<meta name="author" content="Hemn Khezri">
+<meta property="og:title" content="Hemn Khezri | Computer Engineer and Researcher">
+<meta property="og:description" content="Research in intrusion detection, network security, cloud computing, optimization and machine learning.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://hemnkhezri.github.io/">
+<meta property="og:image" content="https://hemnkhezri.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://hemnkhezri.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+:root{
+  --paper:#FFFFFF; --panel:#F4F7FA; --ink:#262B33; --soft:#68717F; --name:#808080;
+  --rule:#DCE1E7; --accent:#0070C0; --accent-ink:#005C9E; --mark:#E8F2FA; --on-accent:#FFFFFF;
+  --serif:Lato,"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --sans:Lato,"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#10161F; --panel:#161F2B; --ink:#E6EAF0; --soft:#9AA5B4; --name:#9AA5B4;
+    --rule:#273242; --accent:#4DA8E8; --accent-ink:#7CC0F2; --mark:#17283A; --on-accent:#0B1118;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#10161F; --panel:#161F2B; --ink:#E6EAF0; --soft:#9AA5B4; --name:#9AA5B4;
+  --rule:#273242; --accent:#4DA8E8; --accent-ink:#7CC0F2; --mark:#17283A; --on-accent:#0B1118;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:var(--accent-ink);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:16px;top:12px;background:var(--paper);padding:8px 12px;z-index:5}
+
+.page{max-width:1120px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:270px minmax(0,1fr);gap:64px}
+
+/* side rail */
+.rail{position:sticky;top:0;align-self:start;height:100vh;padding:56px 0 32px;display:flex;flex-direction:column;overflow-y:auto}
+.photo{width:132px;height:132px;border-radius:50%;object-fit:cover;object-position:center 20%;margin-bottom:22px;border:1px solid var(--rule);flex:none}
+.rail h1{font-family:var(--serif);font-weight:700;font-size:2.6rem;line-height:1.05;margin:0;color:var(--accent)}
+.rail h1 span{color:var(--name)}
+.rail .role{color:var(--soft);margin:14px 0 0;font-size:.98rem;line-height:1.45}
+.contact{list-style:none;padding:0;margin:26px 0 0;font-size:.95rem}
+.contact li{margin:5px 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.cv{display:inline-block;padding:9px 16px;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:600;font-size:.93rem;border-radius:3px}
+.cv:hover{filter:brightness(1.08)}
+.theme{font:inherit;font-size:.93rem;font-weight:700;padding:8px 14px;background:transparent;color:var(--ink);border:1px solid var(--rule);border-radius:3px;cursor:pointer}
+.theme:hover{border-color:var(--soft)}
+.theme:focus-visible,.cite:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.toc{margin-top:34px;padding-top:22px;border-top:1px solid var(--rule)}
+.toc ul{list-style:none;padding:0;margin:0;font-size:.95rem}
+.toc li{margin:6px 0}
+.toc a{color:var(--soft);text-decoration:none}
+.toc a{display:block;padding-left:12px;border-left:2px solid transparent}
+.toc a:hover{color:var(--ink);text-decoration:underline}
+.toc a[aria-current="true"]{color:var(--ink);font-weight:700;border-left-color:var(--accent)}
+
+/* main column */
+main{padding:56px 0 80px;min-width:0}
+.lead{font-family:var(--serif);font-size:1.3rem;line-height:1.5;margin:0 0 18px;max-width:38em}
+.sub{color:var(--soft);max-width:44em;margin:0}
+section{padding-top:52px}
+h2{font-family:var(--serif);font-size:1.5rem;font-weight:700;line-height:1.2;margin:0 0 20px;padding-bottom:10px;border-bottom:2px solid var(--accent)}
+h3{font-size:1.02rem;font-weight:700;margin:0;line-height:1.4}
+h4{font-family:var(--serif);font-size:1.08rem;margin:30px 0 12px}
+p{margin:0 0 10px}
+
+.entry{display:grid;grid-template-columns:172px minmax(0,1fr);gap:8px 24px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.entry:last-child{border-bottom:0}
+.when{color:var(--soft);font-size:.9rem;font-variant-numeric:tabular-nums;padding-top:2px;white-space:nowrap}
+.where{color:var(--soft);margin:2px 0 6px}
+.entry ul{margin:6px 0 0;padding-left:18px}
+.entry li{margin:3px 0}
+.note{font-size:.95rem}
+
+.now{background:var(--panel);border-left:3px solid var(--accent);padding:20px 22px}
+.now h3{font-size:1.12rem;line-height:1.4}
+.now p{margin:8px 0 0}
+.now .links{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 22px}
+.cite{font:inherit;font-size:.82rem;font-weight:700;margin-left:8px;padding:1px 9px;background:transparent;color:var(--accent-ink);border:1px solid var(--rule);border-radius:3px;cursor:pointer;white-space:nowrap}
+.cite:hover{border-color:var(--accent)}
+.tags{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{background:var(--mark);padding:5px 12px;border-radius:3px;font-size:.93rem}
+
+.pubs{list-style:none;counter-reset:pub;padding:0;margin:0}
+.pubs li{counter-increment:pub;position:relative;padding:14px 0 14px 46px;border-bottom:1px solid var(--rule)}
+.pubs li:last-child{border-bottom:0}
+.pubs li::before{content:counter(pub);position:absolute;left:0;top:14px;width:30px;font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--accent-ink);text-align:right}
+.pubs .title{display:block;font-weight:600;line-height:1.4}
+.pubs .meta{display:block;color:var(--soft);font-size:.95rem;margin-top:2px}
+.pubs em{color:var(--ink);font-style:italic}
+.me{font-weight:700;color:var(--ink)}
+
+.cols{columns:2;column-gap:40px;list-style:none;padding:0;margin:0}
+.cols li{break-inside:avoid;padding:5px 0;border-bottom:1px solid var(--rule)}
+.grade{float:right;color:var(--soft);font-variant-numeric:tabular-nums}
+
+table{border-collapse:collapse;margin-top:6px}
+th,td{text-align:left;padding:7px 24px 7px 0;vertical-align:bottom;border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums}
+th{font-weight:600;color:var(--soft);font-size:.92rem}
+
+.plain{list-style:none;padding:0;margin:0}
+.plain>li{padding:12px 0;border-bottom:1px solid var(--rule)}
+.plain>li:last-child{border-bottom:0}
+.yr{color:var(--soft);font-variant-numeric:tabular-nums}
+
+footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--rule);color:var(--soft);font-size:.88rem}
+
+@media (max-width:860px){
+  body{font-size:16px}
+  .page{display:block;padding:0 16px}
+  .rail{position:static;height:auto;padding:36px 0 0;overflow:visible}
+  .rail h1{font-size:2.1rem}
+  .photo{width:104px;height:104px;margin-bottom:16px}
+  .toc{display:none}
+  main{padding-top:28px}
+  section{padding-top:40px}
+  .entry{grid-template-columns:1fr;gap:2px}
+  .cols{columns:1}
+  .lead{font-size:1.18rem}
+  th,td{padding-right:8px;font-size:.8rem}
+  .rail h1,.pubs .title,a{overflow-wrap:anywhere}
+}
+@media print{
+  .rail{position:static;height:auto}.toc,.actions,.skip,.photo,.cite{display:none}
+  .page{display:block}body{font-size:11pt;background:#fff;color:#000}
+  section{padding-top:22px}a{color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#profile">Skip to content</a>
+<div class="page">
+
+<header class="rail">
+  <img class="photo" src="profile.jpg" alt="Portrait of Hemn Khezri" width="132" height="132" onerror="this.remove()">
+  <h1><span>Hemn</span> Khezri</h1>
+  <p class="role">Computer engineer and researcher in intrusion detection, network security, cloud computing and optimization</p>
+  <ul class="contact">
+    <li><a href="mailto:hemnkhezri1994@gmail.com">hemnkhezri1994@gmail.com</a></li>
+    <li><a href="https://scholar.google.com/citations?user=LFKVJiwAAAAJ&amp;hl=en" rel="me noopener">Google Scholar</a></li>
+    <li><a href="https://orcid.org/0000-0002-4938-2658" rel="me noopener">ORCID 0000-0002-4938-2658</a></li>
+    <li><a href="https://www.researchgate.net/profile/Hemn-Khezri" rel="me noopener">ResearchGate</a></li>
+    <li><a href="https://www.linkedin.com/in/hemn-khezri-346602289/" rel="me noopener">LinkedIn</a></li>
+    <li><a href="https://github.com/hemnkhezri" rel="me noopener">GitHub</a></li>
+  </ul>
+  <div class="actions"><a class="cv" href="cv.pdf">Download CV (PDF)</a><button class="theme" id="theme" type="button">Dark mode</button></div>
+  <nav class="toc" aria-label="Sections">
+    <ul>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#current">Current research</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#interests">Research interests</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#languages">Languages and tests</a></li>
+      <li><a href="#projects">Courses and projects</a></li>
+      <li><a href="#honors">Honors and awards</a></li>
+      <li><a href="#references">References</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section id="profile" style="padding-top:0">
+  <p class="lead">Computer engineer with an M.Sc. in Software Engineering, six published journal articles, and five years of university teaching. Seeking a Ph.D. position in Computer Science or Computer Engineering.</p>
+  <p class="sub">My M.Sc. GPA was 19.65 out of 20.00, ranked 3rd among 34 students in the same entry year and field of study. My research covers cloud computing, network security, intrusion detection systems, optimization algorithms and machine learning. Alongside teaching and research assistance, I have practical experience in IT support, network troubleshooting and system administration. For doctoral work I am particularly interested in intelligent intrusion detection, cybersecurity, machine learning, cloud computing and optimization.</p>
+</section>
+
+<section id="current">
+  <h2>Current research</h2>
+  <div class="now">
+    <h3>Evaluation Choices Decide the Winner: A Pre-Registered Re-Evaluation of Federated Intrusion Detection for Industrial IoT</h3>
+    <p class="where">H. Khezri, M. Trik. Manuscript in preparation, 2026</p>
+    <p>Seven sealed studies and 6,033 federated training runs test how the data split, the training budget and tuning change which intrusion detection method appears to win, alongside an audit of 24 published federated IDS papers. Plans, code and run-level results are public.</p>
+    <p class="links"><a href="https://github.com/hemnkhezri/fed-ids-evaluation">Code and results on GitHub</a><a href="https://doi.org/10.5281/zenodo.23142334">Archived on Zenodo (DOI)</a></p>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <article class="entry">
+    <div class="when">Sep 2017 – Sep 2019</div>
+    <div>
+      <h3>Master of Science in Computer Engineering, Software Engineering</h3>
+      <p class="where">Afagh Higher Education Institute, Urmia, Iran</p>
+      <p class="note">GPA: 19.65/20.00</p>
+      <p class="note">Thesis: “Optimizing Scientific Workflow Scheduling Using the Whale Optimization Algorithm” (grade: 19/20)</p>
+      <p class="note">Supervisor: Dr. Mohammad Masdari</p>
+    </div>
+  </article>
+  <article class="entry">
+    <div class="when">Sep 2015 – July 2017</div>
+    <div>
+      <h3>Bachelor of Science in Computer Software Engineering Technology</h3>
+      <p class="where">Islamic Azad University, Sardasht Branch, Sardasht, Iran</p>
+      <p class="note">GPA: 18.20/20.00</p>
+      <p class="note">Final project: “Design and Implementation of a Hotel Management System Using C#, SQL Server in Visual Studio” (grade: 20/20)</p>
+      <p class="note">Supervisor: Dr. Mohammad Trik</p>
+    </div>
+  </article>
+  <article class="entry">
+    <div class="when">Sep 2013 – July 2015</div>
+    <div>
+      <h3>Associate of Science in Computer Software</h3>
+      <p class="where">Islamic Azad University, Sardasht Branch, Sardasht, Iran</p>
+      <p class="note">GPA: 18.13/20.00</p>
+    </div>
+  </article>
+</section>
+
+<section id="interests">
+  <h2>Research interests</h2>
+  <ul class="tags">
+    <li>Cybersecurity and network security</li>
+    <li>Intrusion detection systems</li>
+    <li>Industrial IoT (IIoT) security</li>
+    <li>Anomaly detection</li>
+    <li>Federated learning</li>
+    <li>Machine learning</li>
+    <li>Deep learning</li>
+    <li>Optimization algorithms</li>
+    <li>Cloud computing</li>
+    <li>Data science</li>
+  </ul>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <h4 style="margin-top:0">Journal articles</h4>
+  <ol class="pubs">
+    <li>
+      <a class="title" href="https://www.sciencedirect.com/science/article/abs/pii/S1568494620302416">A survey and taxonomy of the fuzzy signature-based Intrusion Detection Systems</a>
+      <span class="meta">M. Masdari, <span class="me">H. Khezri</span>. <em>Applied Soft Computing</em>, 2020 <button class="cite" type="button" data-cite="M. Masdari and H. Khezri, &quot;A survey and taxonomy of the fuzzy signature-based Intrusion Detection Systems,&quot; Applied Soft Computing, 2020. https://www.sciencedirect.com/science/article/abs/pii/S1568494620302416">Copy citation</button></span>
+    </li>
+    <li>
+      <a class="title" href="https://link.springer.com/article/10.1007/s10586-019-03032-x">Efficient VM migrations using forecasting techniques in cloud computing: a comprehensive review</a>
+      <span class="meta">M. Masdari, <span class="me">H. Khezri</span>. <em>Cluster Computing</em>, 2020 <button class="cite" type="button" data-cite="M. Masdari and H. Khezri, &quot;Efficient VM migrations using forecasting techniques in cloud computing: a comprehensive review,&quot; Cluster Computing, 2020. https://doi.org/10.1007/s10586-019-03032-x">Copy citation</button></span>
+    </li>
+    <li>
+      <a class="title" href="https://link.springer.com/article/10.1007/s10922-020-09553-w">Service Selection Using Multi-criteria Decision Making: A Comprehensive Overview</a>
+      <span class="meta">Mehdi Hosseinzadeh, Hawkar Kamaran Hama, Marwan Yassin Ghafour, Mohammad Masdari, Omed Hassan Ahmed, <span class="me">Hemn Khezri</span>. <em>Journal of Network and Systems Management</em>, 2020 <button class="cite" type="button" data-cite="M. Hosseinzadeh, H. K. Hama, M. Y. Ghafour, M. Masdari, O. H. Ahmed, and H. Khezri, &quot;Service Selection Using Multi-criteria Decision Making: A Comprehensive Overview,&quot; Journal of Network and Systems Management, 2020. https://doi.org/10.1007/s10922-020-09553-w">Copy citation</button></span>
+    </li>
+    <li>
+      <a class="title" href="https://link.springer.com/article/10.1007/s12652-020-02441-w">Service selection using fuzzy multi-criteria decision making: a comprehensive review</a>
+      <span class="meta">M. Masdari, <span class="me">H. Khezri</span>. <em>Journal of Ambient Intelligence and Humanized Computing</em>, 2020 <button class="cite" type="button" data-cite="M. Masdari and H. Khezri, &quot;Service selection using fuzzy multi-criteria decision making: a comprehensive review,&quot; Journal of Ambient Intelligence and Humanized Computing, 2020. https://doi.org/10.1007/s12652-020-02441-w">Copy citation</button></span>
+    </li>
+    <li>
+      <a class="title" href="https://link.springer.com/article/10.1007/s10700-020-09332-x">Towards fuzzy anomaly detection-based security: a comprehensive review</a>
+      <span class="meta">M. Masdari, <span class="me">H. Khezri</span>. <em>Fuzzy Optimization and Decision Making</em>, 2020 <button class="cite" type="button" data-cite="M. Masdari and H. Khezri, &quot;Towards fuzzy anomaly detection-based security: a comprehensive review,&quot; Fuzzy Optimization and Decision Making, 2020. https://doi.org/10.1007/s10700-020-09332-x">Copy citation</button></span>
+    </li>
+    <li>
+      <a class="title" href="https://link.springer.com/article/10.1007/s00607-020-00812-x">Efficient offloading schemes using Markovian models: a literature review</a>
+      <span class="meta">M. Masdari, <span class="me">H. Khezri</span>. <em>Computing</em>, 2020 <button class="cite" type="button" data-cite="M. Masdari and H. Khezri, &quot;Efficient offloading schemes using Markovian models: a literature review,&quot; Computing, 2020. https://doi.org/10.1007/s00607-020-00812-x">Copy citation</button></span>
+    </li>
+  </ol>
+
+  <h4>Manuscripts under review</h4>
+  <ol class="pubs" style="counter-reset:pub 6">
+    <li>
+      <span class="title">Dynamic Graph Neural Networks for Zero-Day Intrusion Detection in Evolving Network Environments</span>
+      <span class="meta">A. Moradi, <span class="me">H. Khezri</span>, J. Farhadi. <em>Journal of Network and Computer Applications</em>. Under review, September 2026</span>
+    </li>
+  </ol>
+
+  <h4>Academic service and peer review</h4>
+  <p>Peer reviewer, <em>The Journal of Supercomputing</em>, Springer Nature, 2026.</p>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <h4 style="margin-top:0">Professional and academic</h4>
+  <article class="entry">
+    <div class="when">June 2021 – July 2026</div>
+    <div>
+      <h3>Lecturer (Adjunct Faculty)</h3>
+      <p class="where">Islamic Azad University, Sardasht Branch, Sardasht, Iran</p>
+      <ul>
+        <li>Taught 56 theoretical and 71 practical credit units (over 1,080 theoretical and 1,900 practical contact hours) in Computer Science and IT courses at Associate and Bachelor levels.</li>
+        <li>Key subjects: Mobile Programming, Database Systems, Web Development, Algorithms, Game Development, Network Security and Cloud Computing.</li>
+        <li>Supervised final-year projects and student internships, providing technical guidance and performance evaluation.</li>
+      </ul>
+    </div>
+  </article>
+  <article class="entry">
+    <div class="when">Sep 2023 – Sep 2026</div>
+    <div>
+      <h3>Teacher and Trainer</h3>
+      <p class="where">Iran Technical &amp; Vocational Training Organization, Islamic Azad University, Sardasht Branch, Sardasht, Iran</p>
+      <ul><li>Conducted training courses including ICDL, Photoshop and AI.</li></ul>
+    </div>
+  </article>
+  <article class="entry">
+    <div class="when">Dec 2017 – April 2020</div>
+    <div>
+      <h3>Research Assistant</h3>
+      <p class="where">Afagh Higher Education Institute, Urmia, Iran</p>
+      <ul><li>Research, article writing, data collection and analysis under the supervision of Dr. Mohammad Masdari.</li></ul>
+    </div>
+  </article>
+
+  <h4>Industry</h4>
+  <article class="entry">
+    <div class="when">Feb 2026 – August 2026</div>
+    <div>
+      <h3>IT Specialist (Server and Network Support)</h3>
+      <p class="where">Dilan Karan Piranshahr Co., Piranshahr, Iran</p>
+      <ul>
+        <li>Administered and maintained company servers and local network infrastructure.</li>
+        <li>Configured and troubleshot hardware, operating systems and office software.</li>
+        <li>Provided technical support to staff and resolved network and system issues.</li>
+        <li>Maintained system security, performed backups and monitored network performance.</li>
+        <li>Supported administrative and office operations through IT management.</li>
+      </ul>
+    </div>
+  </article>
+  <article class="entry">
+    <div class="when">April 2025 – Feb 2026</div>
+    <div>
+      <h3>Technical and IT Specialist</h3>
+      <p class="where">Ertebat Afzar Daygan IT Company, Urmia, West Azerbaijan, Iran (contracted to the Customs Office of Kileh Sardasht)</p>
+      <ul>
+        <li>Worked as on-site IT support engineer at the Customs Office of Kileh Sardasht.</li>
+        <li>Maintained and supported hardware and software systems across the customs office.</li>
+        <li>Managed and troubleshot local and wide-area networks, ensuring connectivity and system reliability.</li>
+        <li>Provided continuous technical support to staff to maintain operational efficiency.</li>
+        <li>Worked with the IT department to implement security policies, system updates and hardware upgrades.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section id="skills">
+  <h2>Technical skills</h2>
+  <ul class="tags">
+    <li>Python</li>
+    <li>C++</li>
+    <li>C#</li>
+    <li>MATLAB</li>
+    <li>Microsoft SQL Server</li>
+    <li>CloudSim</li>
+    <li>RapidMiner</li>
+    <li>Git and GitHub</li>
+    <li>EndNote</li>
+    <li>AI-assisted research and productivity tools</li>
+    <li>WordPress website development</li>
+    <li>Microsoft Office</li>
+    <li>Microsoft Windows</li>
+  </ul>
+</section>
+
+<section id="languages">
+  <h2>Languages and test scores</h2>
+  <p>Kurdish (native), Persian (fluent), English (intermediate)</p>
+  <div style="overflow-x:auto"><table>
+    <caption style="text-align:left;font-weight:700;padding:14px 0 4px">GRE</caption>
+    <tr><th scope="col">Overall</th><th scope="col">Verbal Reasoning</th><th scope="col">Quantitative Reasoning</th><th scope="col">Analytical Writing</th></tr>
+    <tr><td>330</td><td>160</td><td>170</td><td>3.5</td></tr>
+  </table></div>
+</section>
+
+<section id="projects">
+  <h2>Courses and projects</h2>
+  <h4 style="margin-top:0">Related graduate courses</h4>
+  <ul class="cols">
+    <li>Advanced Network Security <span class="grade">20/20</span></li>
+    <li>Advanced Operating System <span class="grade">20/20</span></li>
+    <li>Advanced Computer Networks <span class="grade">20/20</span></li>
+    <li>Advanced Database <span class="grade">20/20</span></li>
+    <li>Software Architecture <span class="grade">20/20</span></li>
+    <li>Knowledge Base Management <span class="grade">20/20</span></li>
+    <li>Research Method <span class="grade">20/20</span></li>
+    <li>Distributed Systems <span class="grade">18.5/20</span></li>
+    <li>Data Mining <span class="grade">18.5/20</span></li>
+  </ul>
+
+  <h4>Related projects</h4>
+  <ul class="plain">
+    <li>Intrusion detection based on machine learning (Gaussian Naïve Bayes, logistic regression, SVM, KNN and decision tree classifiers) with hyperparameter tuning for anomaly detection on the KDD Cup'99 dataset, in Python. <span class="yr">2021</span></li>
+    <li>Live migration of virtual machines in cloud computing using the CR/TR algorithm with CloudSim. <span class="yr">2019</span></li>
+    <li>Task scheduling using the EDF algorithm in cloud computing, in Java with NetBeans. <span class="yr">2019</span></li>
+    <li>Task scheduling in cloud computing using the Min-Min algorithm with CloudSim. <span class="yr">2018</span></li>
+    <li>Design and implementation of a hotel management system in C# with a SQL Server database and LINQ (B.Sc. final project). <span class="yr">2017</span></li>
+  </ul>
+</section>
+
+<section id="honors">
+  <h2>Honors and awards</h2>
+  <ul class="plain">
+    <li><strong>Fully funded Ph.D. admission offer, University of Texas at San Antonio (UTSA), USA.</strong> <span class="yr">2024</span><br>A competitive, fully funded doctoral admission offer, granted without interview on the basis of academic evaluation. Unable to enroll because of visa and travel restrictions.</li>
+    <li><strong>Ranked 3rd among 34 students</strong> in the M.Sc. program in Computer Engineering, Software Engineering, among students of the same entry year and field of study, Afagh Higher Education Institute, Iran. <span class="yr">2019</span></li>
+    <li><strong>Ranked 1st among Software Engineering B.Sc. students</strong> at Islamic Azad University, Sardasht Branch. <span class="yr">2017</span></li>
+  </ul>
+  <h4>Memberships</h4>
+  <p>Member of the Young Researchers and Elite Club of Islamic Azad University.</p>
+</section>
+
+<section id="references">
+  <h2>References</h2>
+  <ul class="plain">
+    <li><strong>Dr. Mohammad Masdari</strong> (<a href="https://scholar.google.com/citations?user=FAAiO3EAAAAJ&amp;hl=en">Google Scholar</a>)<br>Researcher, University of Applied Sciences and Arts, Dortmund, Germany</li>
+    <li><strong>Dr. Mohammad Trik</strong> (<a href="https://scholar.google.com/citations?user=JRCvlYUAAAAJ&amp;hl=en">Google Scholar</a>)<br>Assistant Professor, Department of Computer Engineering, Islamic Azad University, North Tehran Branch</li>
+    <li><strong>Dr. Parinaz Eskandarian</strong> (<a href="https://www.researchgate.net/profile/Parinaz-Eskandarian">ResearchGate</a>)<br>Assistant Professor, Department of Computer Engineering, Afagh Higher Education Institute</li>
+    <li><strong>Dr. Mohammad Kaveh</strong> (<a href="https://scholar.google.com/citations?hl=en&amp;user=UtwV6SgAAAAJ">Google Scholar</a>, <a href="https://knu.edu.iq/staff.php?stid=157">webpage</a>)<br>Assistant Professor, Department of Petroleum Engineering, Knowledge University, Erbil, Iraq</li>
+  </ul>
+  <p class="sub" style="margin-top:14px">Contact details for referees are in the CV and available on request.</p>
+</section>
+
+<footer>Last updated: October 2026</footer>
+
+</main>
+</div>
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById("theme");
+  function isDark(){var t=root.getAttribute("data-theme");return t?t==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches}
+  function label(){btn.textContent=isDark()?"Light mode":"Dark mode"}
+  label();
+  btn.addEventListener("click",function(){var next=isDark()?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem("theme",next)}catch(e){}label()});
+
+  function copy(text){
+    if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(text);
+    return new Promise(function(ok,no){var a=document.createElement("textarea");a.value=text;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy")?ok():no()}catch(e){no()}document.body.removeChild(a)});
+  }
+  document.querySelectorAll(".cite").forEach(function(b){
+    b.addEventListener("click",function(){
+      copy(b.getAttribute("data-cite")).then(function(){b.textContent="Copied"},function(){b.textContent="Copy failed"})
+        .then(function(){setTimeout(function(){b.textContent="Copy citation"},1800)});
+    });
+  });
+
+  var links={};document.querySelectorAll(".toc a").forEach(function(a){links[a.getAttribute("href").slice(1)]=a});
+  if("IntersectionObserver" in window){
+    var seen={};
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){seen[e.target.id]=e.isIntersecting});
+      var cur=null;document.querySelectorAll("main section").forEach(function(s){if(!cur&&seen[s.id])cur=s.id});
+      if(cur)for(var k in links)links[k].setAttribute("aria-current",k===cur?"true":"false");
+    },{rootMargin:"-10% 0px -70% 0px"});
+    document.querySelectorAll("main section").forEach(function(s){io.observe(s)});
+  }
+})();
+</script>
+</body>
+</html>
