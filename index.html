@@ -22,7 +22,7 @@
 <style>
 :root{
   --paper:#FFFFFF; --panel:#F4F7FA; --ink:#262B33; --soft:#68717F; --name:#808080;
-  --rule:#DCE1E7; --accent:#0070C0; --accent-ink:#005C9E; --mark:#E8F2FA; --on-accent:#FFFFFF;
+  --rule:#DCE1E7; --accent:#0070C0; --accent-ink:#005C9E; --mark:#E8F2FA; --on-accent:#FFFFFF; --bar-edge:#1A1A1A; --bar-empty:#FFFFFF;
   --serif:Lato,"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
   --sans:Lato,"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
   color-scheme:light;
@@ -30,13 +30,13 @@
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     --paper:#10161F; --panel:#161F2B; --ink:#E6EAF0; --soft:#9AA5B4; --name:#9AA5B4;
-    --rule:#273242; --accent:#4DA8E8; --accent-ink:#7CC0F2; --mark:#17283A; --on-accent:#0B1118;
+    --rule:#273242; --accent:#4DA8E8; --accent-ink:#7CC0F2; --mark:#17283A; --on-accent:#0B1118; --bar-edge:#9AA5B4; --bar-empty:#10161F;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --paper:#10161F; --panel:#161F2B; --ink:#E6EAF0; --soft:#9AA5B4; --name:#9AA5B4;
-  --rule:#273242; --accent:#4DA8E8; --accent-ink:#7CC0F2; --mark:#17283A; --on-accent:#0B1118;
+  --rule:#273242; --accent:#4DA8E8; --accent-ink:#7CC0F2; --mark:#17283A; --on-accent:#0B1118; --bar-edge:#9AA5B4; --bar-empty:#10161F;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -97,6 +97,18 @@ p{margin:0 0 10px}
 .now .links{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 22px}
 .cite{font:inherit;font-size:.82rem;font-weight:700;margin-left:8px;padding:1px 9px;background:transparent;color:var(--accent-ink);border:1px solid var(--rule);border-radius:3px;cursor:pointer;white-space:nowrap}
 .cite:hover{border-color:var(--accent)}
+.skill-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 32px}
+.skill-group{background:var(--panel);border-radius:4px;padding:16px 18px 10px}
+.skill-group h3{font-size:.86rem;font-weight:700;color:var(--soft);margin:0 0 8px;letter-spacing:.01em}
+.skills{list-style:none;padding:0;margin:0}
+.skills li{display:grid;grid-template-columns:minmax(0,1fr) 128px 34px;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--rule)}
+.skills li:first-child{border-top:0}
+.sk-name{font-size:.95rem}
+.sk-bar{display:block;height:12px;border:2px solid var(--bar-edge);border-radius:3px;background:var(--bar-empty);overflow:hidden}
+.sk-fill{display:block;height:100%;background:linear-gradient(180deg,#5B84D0 0%,#3D6CC8 55%,#2C5DB6 100%);box-shadow:1px 0 2px rgba(0,0,0,.25)}
+.sk-level{font-size:.8rem;color:var(--soft);text-align:right;font-variant-numeric:tabular-nums}
+.sk-scale{font-size:.8rem;color:var(--soft);margin-top:12px}
+@media (max-width:860px){.skill-groups{grid-template-columns:1fr}.skills li{grid-template-columns:minmax(0,1fr) 96px 34px}}
 .tags{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
 .tags li{background:var(--mark);padding:5px 12px;border-radius:3px;font-size:.93rem}
 
@@ -352,21 +364,43 @@ footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--rule);color:v
 
 <section id="skills">
   <h2>Technical skills</h2>
-  <ul class="tags">
-    <li>Python</li>
-    <li>C++</li>
-    <li>C#</li>
-    <li>MATLAB</li>
-    <li>Microsoft SQL Server</li>
-    <li>CloudSim</li>
-    <li>RapidMiner</li>
-    <li>Git and GitHub</li>
-    <li>EndNote</li>
-    <li>AI-assisted research and productivity tools</li>
-    <li>WordPress website development</li>
-    <li>Microsoft Office</li>
-    <li>Microsoft Windows</li>
-  </ul>
+  <div class="skill-groups">
+    <div class="skill-group">
+      <h3>Programming and machine learning</h3>
+      <ul class="skills">
+        <li><span class="sk-name">Python</span><span class="sk-bar" role="img" aria-label="Python: 5 out of 10"><span class="sk-fill" style="width:50%"></span></span><span class="sk-level">5/10</span></li>
+        <li><span class="sk-name">C#</span><span class="sk-bar" role="img" aria-label="C#: 5 out of 10"><span class="sk-fill" style="width:50%"></span></span><span class="sk-level">5/10</span></li>
+        <li><span class="sk-name">C++</span><span class="sk-bar" role="img" aria-label="C++: 4 out of 10"><span class="sk-fill" style="width:40%"></span></span><span class="sk-level">4/10</span></li>
+        <li><span class="sk-name">MATLAB</span><span class="sk-bar" role="img" aria-label="MATLAB: 4 out of 10"><span class="sk-fill" style="width:40%"></span></span><span class="sk-level">4/10</span></li>
+        <li><span class="sk-name">PyTorch</span><span class="sk-bar" role="img" aria-label="PyTorch: 3 out of 10"><span class="sk-fill" style="width:30%"></span></span><span class="sk-level">3/10</span></li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Cloud simulation and data</h3>
+      <ul class="skills">
+        <li><span class="sk-name">Microsoft SQL Server</span><span class="sk-bar" role="img" aria-label="Microsoft SQL Server: 6 out of 10"><span class="sk-fill" style="width:60%"></span></span><span class="sk-level">6/10</span></li>
+        <li><span class="sk-name">CloudSim</span><span class="sk-bar" role="img" aria-label="CloudSim: 5 out of 10"><span class="sk-fill" style="width:50%"></span></span><span class="sk-level">5/10</span></li>
+        <li><span class="sk-name">RapidMiner</span><span class="sk-bar" role="img" aria-label="RapidMiner: 3 out of 10"><span class="sk-fill" style="width:30%"></span></span><span class="sk-level">3/10</span></li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Research and development tools</h3>
+      <ul class="skills">
+        <li><span class="sk-name">EndNote</span><span class="sk-bar" role="img" aria-label="EndNote: 6 out of 10"><span class="sk-fill" style="width:60%"></span></span><span class="sk-level">6/10</span></li>
+        <li><span class="sk-name">WordPress website development</span><span class="sk-bar" role="img" aria-label="WordPress website development: 6 out of 10"><span class="sk-fill" style="width:60%"></span></span><span class="sk-level">6/10</span></li>
+        <li><span class="sk-name">Git and GitHub</span><span class="sk-bar" role="img" aria-label="Git and GitHub: 5 out of 10"><span class="sk-fill" style="width:50%"></span></span><span class="sk-level">5/10</span></li>
+        <li><span class="sk-name">AI-assisted research and productivity tools</span><span class="sk-bar" role="img" aria-label="AI-assisted research and productivity tools: 5 out of 10"><span class="sk-fill" style="width:50%"></span></span><span class="sk-level">5/10</span></li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h3>Systems and office</h3>
+      <ul class="skills">
+        <li><span class="sk-name">Microsoft Office</span><span class="sk-bar" role="img" aria-label="Microsoft Office: 8 out of 10"><span class="sk-fill" style="width:80%"></span></span><span class="sk-level">8/10</span></li>
+        <li><span class="sk-name">Microsoft Windows</span><span class="sk-bar" role="img" aria-label="Microsoft Windows: 7 out of 10"><span class="sk-fill" style="width:70%"></span></span><span class="sk-level">7/10</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="sk-scale">Self-assessed level on a scale of 1 to 10.</p>
 </section>
 
 <section id="languages">
